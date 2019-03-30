@@ -1,5 +1,8 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+import ru.avalon.java.dev.j10.labs.models.Person;
+
 /**
  * Представление о человеке.
  * <p>
@@ -12,6 +15,15 @@ package ru.avalon.java.dev.j10.labs.models;
  * </ol>
  */
 public class Person {
+
+    Passport passport;
+    Address address;
+
+    public Person(Passport passport, Address address) {
+        this.passport = passport;
+        this.address = address;
+    }
+
 
     /*
      * TODO(Студент): Создайте класс Address.
@@ -50,7 +62,7 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        return null;
+        return passport.getFullName();
     }
 
     /**
@@ -65,6 +77,6 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+        return address.toString();
     }
 }
