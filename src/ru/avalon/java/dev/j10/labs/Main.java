@@ -1,17 +1,17 @@
 package ru.avalon.java.dev.j10.labs;
 
-import ru.avalon.java.dev.j10.labs.models.Person;
+import ru.avalon.java.dev.j10.labs.models.*;
+import ru.avalon.java.dev.j10.labs.commons.*;
+import java.time.LocalDate;
+
 
 public class Main {
-
-    Main() {
+    public static void main(String[] args) {
 
         /*
          * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
          */
 
-        Person ivanov = null;
-        Person smith = null;
 
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
@@ -24,6 +24,18 @@ public class Main {
          *    чтобы она адресовала объект типа 'Person'
          *    описывающий человека по имени 'John Edvard Smith'.
          */
+        Person ivanov = new Person(new Passport("1234 123123", "Иван", "Иванов",
+                "Иванович", "", LocalDate.of(1992, 03, 10),
+                LocalDate.of(2011, 03, 10), "Абракадабра 123"),
+                new Address(628011, "Санкт-Петербург", "Думская", 12, 4533));
+        Person smith = new Person(new Passport("4321 321321", "John", "Smith",
+                null, "Edward", LocalDate.of(1999, 01, 03),
+                LocalDate.of(2010, 03, 12), "Абракадабра 25"),
+                new Address(628011, "Москва", "Вязов", 12, 455));
+
+
+
+
 
         /*
          * TODO(Студент): Создайте несколько строковых переменных:
@@ -45,11 +57,20 @@ public class Main {
          *    переменной 'smith'.
          */
 
+
+
         /*
          * TODO(Студент): Выведите в консоль значения созданных строковых переменных:
          *
          * Значение каждой переменной должно быть выведено на
          * отдельной строке.
          */
+
+        System.out.println(ivanov.getFullName());
+        System.out.println(ivanov.getAddress());
+        System.out.println(smith.getFullName());
+        System.out.println(smith.getAddress());
     }
+
 }
+
